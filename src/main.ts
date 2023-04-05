@@ -3,7 +3,7 @@ import {wait} from './wait'
 
 async function run(): Promise<void> {
   try {
-    const creativity: number = core.getInput('creativity')
+    const creativity: string = core.getInput('creativity')
     core.debug(`Creativity level: ${creativity}`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
 
     core.debug(new Date().toTimeString())

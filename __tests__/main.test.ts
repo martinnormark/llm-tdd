@@ -5,7 +5,7 @@ import * as path from 'path'
 import {expect, test} from '@jest/globals'
 
 test('throws invalid number', async () => {
-  const input = parseInt('foo', 10)
+  const input = parseFloat('foo')
   await expect(wait(input)).rejects.toThrow('milliseconds not a number')
 })
 
@@ -19,7 +19,7 @@ test('wait 500 ms', async () => {
 
 // shows how the runner will run a javascript action with env / stdout protocol
 test('test runs', () => {
-  process.env['INPUT_MILLISECONDS'] = '500'
+  process.env['INPUT_CREATIVITY'] = '0.7'
   const np = process.execPath
   const ip = path.join(__dirname, '..', 'lib', 'main.js')
   const options: cp.ExecFileSyncOptions = {
