@@ -5,7 +5,7 @@ inputs:
   creativity: # change this
     required: false
     description: 'input description here'
-    default: 0.7
+    default: '0.7'
 runs:
   using: 'node16'
   main: 'dist/index.js'
