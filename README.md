@@ -2,13 +2,39 @@
   <a href="https://github.com/actions/typescript-action/actions"><img alt="typescript-action status" src="https://github.com/actions/typescript-action/workflows/build-test/badge.svg"></a>
 </p>
 
-# Create a JavaScript Action using TypeScript
+**⚠ WARNING: A naive prototype running an unstable genius. 🚧**
 
-Use this template to bootstrap the creation of a TypeScript action.:rocket:
+# Code with a Large Language Model
 
-This template includes compilation support, tests, a validation workflow, publishing, and versioning guidance.
+Coding in your IDE is great. Coding along with Copilot in your IDE can be even better, especially for unit tests.
 
-If you are new, there's also a simpler introduction. See the [Hello World JavaScript Action](https://github.com/actions/hello-world-javascript-action)
+What if we could steer LLMs code-writing with unit tests, and do Test Driven Development with the language model by describing in plain words what we want, have the language model write tests and iterate on implementation until the tests are green, linting passes and other code analysis checks succeeds.
+
+# High level steps
+
+These are the outline of high level steps it could take.
+
+## Problem definition
+
+Open an issue to describe what you want implemented. You probably need to steer the model with guidance as to where in the code base, give it some boundaries like "an express.js middleware that does XYZ".
+
+This action will the use a large language model like OpenAI's GPT with prompt chaining to start working on your issue. It might reply back outlining the steps it plans to take, and perhaps you want to steer it based on this by replying back with your edits (optional).
+
+## Write unit tests
+
+Once the plan is a go, it will create a branch, write the unit tests for the planned changes and submit a draft pull request where you can view the tests. You can again edit the tests to steer the model, or comment with changes you want done.
+
+## Iterate on implementation
+
+Once the tests are written, it will start implementation and use checks on the PR as feedback for each commit. Once the tests pass, and all checks pass it will consider its job done until told otherwise.
+
+It probably needs some upper limit as to how many times it can do this final loop so it doesn't run wild and drive up you action minutes consumption.
+
+🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖 🤖
+
+---
+
+> Ignore below, from template
 
 ## Create an action from this template
 
