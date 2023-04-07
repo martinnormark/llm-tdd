@@ -2,6 +2,9 @@ name: 'LLM driven TDD'
 description: 'An experiment to use LLMs in-the-loop to driven Test Driven Development.'
 author: 'Martin Høst Normark'
 inputs:
+  ghToken:
+    required: true
+    description: 'A token that can access your repo, create branches, submit pull requests.'
   creativity: # change this
     required: false
     description: 'input description here'

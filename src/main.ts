@@ -1,10 +1,19 @@
 import * as core from '@actions/core'
+import {context, getOctokit} from '@actions/github'
 import {wait} from './wait'
 
 async function run(): Promise<void> {
   try {
+    const eventName = context.eventName
     const creativity: string = core.getInput('creativity')
-    core.debug(`Creativity level: ${creativity}`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+    core.debug(`Event "${eventName}" with creativity level: ${creativity}`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+
+    const ghToken = core.getInput('ghToken')
+    const octokit = getOctokit(ghToken)
+
+    // Events for the same issue can be triggered multiple times
+    // Need to restore state from the issue
+    const issueNumber = context.issue.number
 
     core.debug(new Date().toTimeString())
     await wait(1000)
